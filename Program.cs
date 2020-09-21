@@ -7,8 +7,7 @@ namespace LeetCodeSolution
     {
         static void Main(string[] args)
         {
-            Q1551.Run(3);
-            Q1551.Run(6);
+            LCP17.Run("AB");
         }
     }
 }
