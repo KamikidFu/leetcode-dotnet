@@ -38,55 +38,69 @@
         {
             public TreeNode MergeTrees(TreeNode t1, TreeNode t2)
             {
-                TreeNode rtn = new TreeNode(0);
-                if (t1 != null && t2 != null)
+                // TreeNode rtn = new TreeNode(0);
+                // if (t1 != null && t2 != null)
+                // {
+                //     rtn = new TreeNode(t1.val + t2.val);
+                // }else if (t1 == null && t2 != null)
+                // {
+                //     rtn = new TreeNode(t2.val);
+                //     return rtn;
+                // }else if (t1 != null && t2 == null)
+                // {
+                //     rtn = new TreeNode(t1.val);
+                //     return rtn;
+                // }
+                // else
+                // {
+                //     return null;
+                // }
+                //
+                // if (t1.left != null && t2.left != null)
+                // {
+                //     rtn.left = MergeTrees(t1.left, t2.left);
+                // }
+                //
+                // if (t1.right != null && t2.right != null)
+                // {
+                //     rtn.right = MergeTrees(t1.right, t2.right);
+                // }
+                //
+                // if (t1.left != null && t2.left == null)
+                // {
+                //     rtn.left = MergeTrees(t1.left, new TreeNode(0));
+                // }
+                //
+                // if (t1.left == null && t2.left != null)
+                // {
+                //     rtn.left = MergeTrees(new TreeNode(0), t2.left);
+                // }
+                //
+                // if (t1.right != null && t2.right == null)
+                // {
+                //     rtn.right = MergeTrees(t1.right, new TreeNode(0));
+                // }
+                //
+                // if (t1.right == null && t2.right != null)
+                // {
+                //     rtn.right = MergeTrees(new TreeNode(0), t2.right);
+                // }
+                //
+                // return rtn;
+                if (t1 == null)
                 {
-                    rtn = new TreeNode(t1.val + t2.val);
-                }else if (t1 == null && t2 != null)
-                {
-                    rtn = new TreeNode(t2.val);
-                    return rtn;
-                }else if (t1 != null && t2 == null)
-                {
-                    rtn = new TreeNode(t1.val);
-                    return rtn;
-                }
-                else
-                {
-                    return null;
+                    return t2;
                 }
 
-                if (t1.left != null && t2.left != null)
+                if (t2 == null)
                 {
-                    rtn.left = MergeTrees(t1.left, t2.left);
+                    return t1;
                 }
 
-                if (t1.right != null && t2.right != null)
-                {
-                    rtn.right = MergeTrees(t1.right, t2.right);
-                }
-
-                if (t1.left != null && t2.left == null)
-                {
-                    rtn.left = MergeTrees(t1.left, new TreeNode(0));
-                }
-
-                if (t1.left == null && t2.left != null)
-                {
-                    rtn.left = MergeTrees(new TreeNode(0), t2.left);
-                }
-
-                if (t1.right != null && t2.right == null)
-                {
-                    rtn.right = MergeTrees(t1.right, new TreeNode(0));
-                }
-
-                if (t1.right == null && t2.right != null)
-                {
-                    rtn.right = MergeTrees(new TreeNode(0), t2.right);
-                }
-
-                return rtn;
+                t1.val += t2.val;
+                t1.left = MergeTrees(t1.left, t2.left);
+                t1.right = MergeTrees(t1.right, t2.right);
+                return t1;
             }
         }
     }
