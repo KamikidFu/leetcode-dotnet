@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Threading;
+using LeetCodeSolution.Structure;
 
 namespace LeetCodeSolution.Questions
 {
@@ -15,17 +15,7 @@ namespace LeetCodeSolution.Questions
             root.right=new TreeNode(2);
             var result = s.FindMode(root);
         }
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-
-            public TreeNode(int x)
-            {
-                val = x;
-            }
-        }
+        
 
         public class Solution
         {

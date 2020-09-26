@@ -1,21 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using LeetCodeSolution.Structure;
 
 namespace LeetCodeSolution.Questions
 {
     public class Q106
     {
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-
-            public TreeNode(int x)
-            {
-                val = x;
-            }
-        }
 
         public static void Run()
         {
