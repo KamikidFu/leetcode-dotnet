@@ -13,15 +13,36 @@ namespace LeetCodeSolution.Questions
         public class Solution {
             public string ReverseWords(string s)
             {
-                var trimed = Regex.Replace(s.Trim(), @"\s+", " ");
-                var arr = trimed.Split(' ');
-                StringBuilder sb = new StringBuilder();
-                for (int i = arr.Length - 1; i >= 0; i--)
+                // var trimed = Regex.Replace(s.Trim(), @"\s+", " ");
+                // var arr = trimed.Split(' ');
+                // StringBuilder sb = new StringBuilder();
+                // for (int i = arr.Length - 1; i >= 0; i--)
+                // {
+                //     sb.Append(arr[i]);
+                //     sb.Append(" ");
+                // }
+                // return sb.ToString().Trim();
+                string temp = s.Trim();
+                int start = temp.Length - 1;
+                int end = temp.Length - 1;
+                string res = "";
+                while (start >= 0)
                 {
-                    sb.Append(arr[i]);
-                    sb.Append(" ");
+                    while (start >= 0 && temp[start] != ' ')
+                    {
+                        start--;
+                    }
+
+                    res += temp.Substring(start+1, end-start) + " ";
+                    while (start >= 0 && temp[start] == ' ')
+                    {
+                        start--;
+                    }
+
+                    end = start;
                 }
-                return sb.ToString().Trim();
+
+                return res.Trim();
             }
         }
     }
