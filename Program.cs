@@ -7,7 +7,7 @@ namespace LeetCodeSolution
     {
         static void Main(string[] args)
         {
-            LC06.Run();
+            LC03.Run();
         }
     }
 }
